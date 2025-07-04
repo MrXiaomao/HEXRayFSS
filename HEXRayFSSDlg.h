@@ -5,12 +5,12 @@
 #pragma once
 
 
-// CHERayFSSDlg 对话框
-class CHERayFSSDlg : public CDialog
+// CHEXRayFSSDlg 对话框
+class CHEXRayFSSDlg : public CDialog
 {
 // 构造
 public:
-	CHERayFSSDlg(CWnd* pParent = nullptr);	// 标准构造函数
+	CHEXRayFSSDlg(CWnd* pParent = nullptr);	// 标准构造函数
 
 // 对话框数据
 #ifdef AFX_DESIGN_TIME
@@ -33,4 +33,5 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnAbout();
+	afx_msg void OpenNetSetting();
 };

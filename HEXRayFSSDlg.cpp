@@ -10,6 +10,7 @@
 #include "json/json.h"
 #include "MyConst.h"
 
+#include "NetSettingDlg.h"
 //VerQueryValue()函数需要添加本lib库, 或者右键项目 → 属性 → 链接器 → 输入 → 附加依赖项
 #pragma comment(lib,"Version.lib")
 #include "GitVerison.h"
@@ -148,29 +149,30 @@ BOOL CAboutDlg::OnInitDialog()
 	return TRUE;
 }
 
-// CHERayFSSDlg 对话框
-CHERayFSSDlg::CHERayFSSDlg(CWnd* pParent /*=nullptr*/)
+// CHEXRayFSSDlg 对话框
+CHEXRayFSSDlg::CHEXRayFSSDlg(CWnd* pParent /*=nullptr*/)
 	: CDialog(IDD_HEXRAYFSS_DIALOG, pParent)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
-void CHERayFSSDlg::DoDataExchange(CDataExchange* pDX)
+void CHEXRayFSSDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
 }
 
-BEGIN_MESSAGE_MAP(CHERayFSSDlg, CDialog)
+BEGIN_MESSAGE_MAP(CHEXRayFSSDlg, CDialog)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
-	ON_COMMAND(ID_32776, &CHERayFSSDlg::OnAbout)
+	ON_COMMAND(ID_32776, &CHEXRayFSSDlg::OnAbout)
+	ON_COMMAND(ID_32777, &CHEXRayFSSDlg::OpenNetSetting)
 END_MESSAGE_MAP()
 
 
-// CHERayFSSDlg 消息处理程序
+// CHEXRayFSSDlg 消息处理程序
 
-BOOL CHERayFSSDlg::OnInitDialog()
+BOOL CHEXRayFSSDlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 
@@ -239,7 +241,7 @@ BOOL CHERayFSSDlg::OnInitDialog()
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
 
-void CHERayFSSDlg::OnSysCommand(UINT nID, LPARAM lParam)
+void CHEXRayFSSDlg::OnSysCommand(UINT nID, LPARAM lParam)
 {
 	if ((nID & 0xFFF0) == IDM_ABOUTBOX)
 	{
@@ -256,7 +258,7 @@ void CHERayFSSDlg::OnSysCommand(UINT nID, LPARAM lParam)
 //  来绘制该图标。  对于使用文档/视图模型的 MFC 应用程序，
 //  这将由框架自动完成。
 
-void CHERayFSSDlg::OnPaint()
+void CHEXRayFSSDlg::OnPaint()
 {
 	if (IsIconic())
 	{
@@ -283,15 +285,23 @@ void CHERayFSSDlg::OnPaint()
 
 //当用户拖动最小化窗口时系统调用此函数取得光标
 //显示。
-HCURSOR CHERayFSSDlg::OnQueryDragIcon()
+HCURSOR CHEXRayFSSDlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
 
-void CHERayFSSDlg::OnAbout()
+void CHEXRayFSSDlg::OnAbout()
 {
 	// TODO: 在此添加命令处理程序代码
 	CAboutDlg dlgAbout;
 	dlgAbout.DoModal();
+}
+
+
+void CHEXRayFSSDlg::OpenNetSetting()
+{
+	// TODO: 在此添加命令处理程序代码
+	NetSettingDlg netsetdlg; // 创建一个模态对话框
+	netsetdlg.DoModal(); // 显示模态对话框 其中参数用swp_SHOWNOMAL,  SW_SHOW, SW_VISION 好像效果是一样的
 }

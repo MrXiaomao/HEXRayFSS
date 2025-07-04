@@ -1,3 +1,5 @@
 {
+	"IP_Detector" : "192.168.1.20",
+	"Port_Detector" : 5000,
 	"SoftwareTitle" : "高能X射线滤片堆栈谱仪"
 }

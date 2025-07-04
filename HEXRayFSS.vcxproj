@@ -201,6 +201,7 @@ C:\Users\DELL\AppData\Local\Programs\Python\Python311\python.exe get_version.py<
     <ClInclude Include="HEXRayFSSDlg.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="MyConst.h" />
+    <ClInclude Include="NetSettingDlg.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
@@ -213,6 +214,7 @@ C:\Users\DELL\AppData\Local\Programs\Python\Python311\python.exe get_version.py<
     <ClCompile Include="json\lib_json\json_writer.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="MyConst.cpp" />
+    <ClCompile Include="NetSettingDlg.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
