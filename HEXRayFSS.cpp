@@ -1,11 +1,11 @@
 ﻿
-// HERayFSS.cpp: 定义应用程序的类行为。
+// HEXRayFSS.cpp: 定义应用程序的类行为。
 //
 
 #include "pch.h"
 #include "framework.h"
-#include "HERayFSS.h"
-#include "HERayFSSDlg.h"
+#include "HEXRayFSS.h"
+#include "HEXRayFSSDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

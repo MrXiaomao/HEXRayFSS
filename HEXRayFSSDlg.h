@@ -1,5 +1,5 @@
 ﻿
-// HERayFSSDlg.h: 头文件
+// HEXRayFSSDlg.h: 头文件
 //
 
 #pragma once
@@ -14,7 +14,7 @@ public:
 
 // 对话框数据
 #ifdef AFX_DESIGN_TIME
-	enum { IDD = IDD_HERAYFSS_DIALOG };
+	enum { IDD = IDD_HEXRAYFSS_DIALOG };
 #endif
 
 	protected:

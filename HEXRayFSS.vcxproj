@@ -22,7 +22,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{96A21072-D862-428E-B490-FB7EBBC9EE80}</ProjectGuid>
     <Keyword>MFCProj</Keyword>
-    <RootNamespace>HERayFSS</RootNamespace>
+    <RootNamespace>HEXRayFSS</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -197,8 +197,8 @@ C:\Users\DELL\AppData\Local\Programs\Python\Python311\python.exe get_version.py<
   <ItemGroup>
     <ClInclude Include="framework.h" />
     <ClInclude Include="GitVerison.h" />
-    <ClInclude Include="HERayFSS.h" />
-    <ClInclude Include="HERayFSSDlg.h" />
+    <ClInclude Include="HEXRayFSS.h" />
+    <ClInclude Include="HEXRayFSSDlg.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="MyConst.h" />
     <ClInclude Include="pch.h" />
@@ -206,8 +206,8 @@ C:\Users\DELL\AppData\Local\Programs\Python\Python311\python.exe get_version.py<
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="HERayFSS.cpp" />
-    <ClCompile Include="HERayFSSDlg.cpp" />
+    <ClCompile Include="HEXRayFSS.cpp" />
+    <ClCompile Include="HEXRayFSSDlg.cpp" />
     <ClCompile Include="json\lib_json\json_reader.cpp" />
     <ClCompile Include="json\lib_json\json_value.cpp" />
     <ClCompile Include="json\lib_json\json_writer.cpp" />
@@ -221,13 +221,13 @@ C:\Users\DELL\AppData\Local\Programs\Python\Python311\python.exe get_version.py<
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="HERayFSS.rc" />
+    <ResourceCompile Include="HEXRayFSS.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\HERayFSS.rc2" />
+    <None Include="res\HEXRayFSS.rc2" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\HERayFSS.ico" />
+    <Image Include="res\HEXRayFSS.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

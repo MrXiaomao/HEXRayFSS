@@ -1,11 +1,11 @@
 ﻿
-// HERayFSSDlg.cpp: 实现文件
+// HEXRayFSSDlg.cpp: 实现文件
 //
 
 #include "pch.h"
 #include "framework.h"
-#include "HERayFSS.h"
-#include "HERayFSSDlg.h"
+#include "HEXRayFSS.h"
+#include "HEXRayFSSDlg.h"
 #include "afxdialogex.h"
 #include "json/json.h"
 #include "MyConst.h"
@@ -150,7 +150,7 @@ BOOL CAboutDlg::OnInitDialog()
 
 // CHERayFSSDlg 对话框
 CHERayFSSDlg::CHERayFSSDlg(CWnd* pParent /*=nullptr*/)
-	: CDialog(IDD_HERAYFSS_DIALOG, pParent)
+	: CDialog(IDD_HEXRAYFSS_DIALOG, pParent)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }

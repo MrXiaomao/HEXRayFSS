@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HERayFSS.h">
+    <ClInclude Include="HEXRayFSS.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="HERayFSSDlg.h">
+    <ClInclude Include="HEXRayFSSDlg.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="framework.h">
@@ -44,10 +44,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="HERayFSS.cpp">
+    <ClCompile Include="HEXRayFSS.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="HERayFSSDlg.cpp">
+    <ClCompile Include="HEXRayFSSDlg.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
@@ -70,17 +70,17 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="HERayFSS.rc">
+    <ResourceCompile Include="HEXRayFSS.rc">
       <Filter>资源文件</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\HERayFSS.rc2">
+    <None Include="res\HEXRayFSS.rc2">
       <Filter>资源文件</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\HERayFSS.ico">
+    <Image Include="res\HEXRayFSS.ico">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>

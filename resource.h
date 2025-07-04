@@ -1,11 +1,11 @@
 ﻿//{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ 生成的包含文件。
-// 供 HERayFSS.rc 使用
+// 供 HEXRayFSS.rc 使用
 //
 #define IDM_ABOUTBOX                    0x0010
 #define IDD_ABOUTBOX                    100
 #define IDS_ABOUTBOX                    101
-#define IDD_HERAYFSS_DIALOG             102
+#define IDD_HEXRAYFSS_DIALOG             102
 #define IDP_SOCKETS_INIT_FAILED         103
 #define IDR_MAINFRAME                   128
 #define IDR_MENU1                       130
