@@ -7,6 +7,8 @@
 #include "HERayFSS.h"
 #include "HERayFSSDlg.h"
 #include "afxdialogex.h"
+#include "json/json.h"
+#include "MyConst.h"
 
 //VerQueryValue()函数需要添加本lib库, 或者右键项目 → 属性 → 链接器 → 输入 → 附加依赖项
 #pragma comment(lib,"Version.lib")
@@ -162,6 +164,7 @@ BEGIN_MESSAGE_MAP(CHERayFSSDlg, CDialog)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_COMMAND(ID_32776, &CHERayFSSDlg::OnAbout)
 END_MESSAGE_MAP()
 
 
@@ -172,13 +175,14 @@ BOOL CHERayFSSDlg::OnInitDialog()
 	CDialog::OnInitDialog();
 
 	// 将“关于...”菜单项添加到系统菜单中。
-	CMenu menu; //菜单栏
-	menu.LoadMenu(IDR_MENU1);  //IDR_MENU1为菜单栏ID号  
-	SetMenu(&menu);
 
 	// IDM_ABOUTBOX 必须在系统命令范围内。
 	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
 	ASSERT(IDM_ABOUTBOX < 0xF000);
+	
+	CMenu menu; //菜单栏
+	menu.LoadMenu(IDR_MENU1);  //IDR_MENU1为菜单栏ID号  
+	SetMenu(&menu);
 
 	CMenu* pSysMenu = GetSystemMenu(FALSE);
 	if (pSysMenu != nullptr)
@@ -193,6 +197,37 @@ BOOL CHERayFSSDlg::OnInitDialog()
 			pSysMenu->AppendMenu(MF_STRING, IDM_ABOUTBOX, strAboutMenu);
 		}
 	}
+
+	//设置软件标题名称
+	CString AppTitle = _T("HEXRay");//默认名称
+	Json::Value jsonSetting = ReadSetting(_T("Setting.json"));
+	if (!jsonSetting.isNull()) {
+		if (jsonSetting.isMember("SoftwareTitle"))
+		{
+			// AppTitle = jsonSetting["SoftwareTitle"].asCString();
+			const char* s = jsonSetting["SoftwareTitle"].asCString();
+			int nLenW = ::MultiByteToWideChar(CP_UTF8, 0, s, -1, NULL, 0);
+			wchar_t* wszBuffer = new wchar_t[nLenW];
+			::MultiByteToWideChar(CP_UTF8, 0, s, -1, wszBuffer, nLenW);
+
+			// 将 Unicode 编码转换为 GB2312 编码（也就是简体中文编码）
+			int nLenA = ::WideCharToMultiByte(CP_ACP, 0, wszBuffer, -1, NULL, 0, NULL, NULL);
+			char* szBuffer = new char[nLenA];
+			::WideCharToMultiByte(CP_ACP, 0, wszBuffer, -1, szBuffer, nLenA, NULL, NULL);
+
+			// 输出结果
+			std::string strResult(szBuffer);
+			const char* tmp = strResult.c_str();
+			AppTitle = tmp;
+		}
+		else {
+			string pStrTitle = _UnicodeToUtf8(AppTitle);
+			// char* pStrTitle = CstringToWideCharArry(AppTitle);
+			jsonSetting["SoftwareTitle"] = pStrTitle;
+		}
+	}
+	WriteSetting(_T("Setting.json"), jsonSetting);
+	SetWindowText(AppTitle);
 
 	// 设置此对话框的图标。  当应用程序主窗口不是对话框时，框架将自动
 	//  执行此操作
@@ -253,3 +288,10 @@ HCURSOR CHERayFSSDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+void CHERayFSSDlg::OnAbout()
+{
+	// TODO: 在此添加命令处理程序代码
+	CAboutDlg dlgAbout;
+	dlgAbout.DoModal();
+}
